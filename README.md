@@ -66,6 +66,8 @@ Space Invaders
 ====
 May 2013
 
+requires pygame
+
 A simple version of the classic game Space Invaders. Nothing that polished, was more just to see if I could do it. Plenty of glitches and bugs. Array of enemies can be an arbitrary height and width
 
 arrow keys to move, space to shoot
