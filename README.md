@@ -10,7 +10,9 @@ To run it, either use the runnable jar file, or if that doesn't work run the com
 
 One of my larger projects, this was made for my AP Computer Science final project in high school with two friends. The art is done by Tal Bonen and I, the coding is done by Shiva Murali and I. We had three weeks for the project, but with finals cutting into our time we only really had about 2.
 
-For our project we made a roguelike dungeon crawler-ish game. Includes randomly generated dungeons, randomly spawning enemies, equippable equipment, fog of war, and multiple classes (although very indistinguishable with the time we had to develop it). Enemies unique to each of four dungeon types. Levels and enemies get progressively more difficult as you advance through dungeons. More info in the text file included (*Note* text file missing at the moment, need to dig up)
+For our project we made a roguelike dungeon crawler-ish game. Includes randomly generated dungeons, randomly spawning enemies, equippable equipment, fog of war, and multiple classes (although very indistinguishable with the time we had to develop it). Enemies unique to each of four dungeon types. Levels and enemies get progressively more difficult as you advance through dungeons. More info in the text file included
+
+I would normally suggest reading the readme we created for this, but it seems to be missing. Until I dig it up, the basic controls are arrow keys to move, space to descend to next dungeon, i to open and close inventory
 
 Fighter
 ====
