@@ -1,3 +1,0 @@
-//imsInfo.txt
-
-o knight.png
