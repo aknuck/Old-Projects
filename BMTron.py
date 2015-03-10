@@ -1,4 +1,4 @@
-import pygame, random, math, sys
+import pygame, random, math
 from pygame.locals import *
 
 pygame.init()
@@ -22,8 +22,6 @@ direction1 = 'u'
 direction2 = 'd'
 x1,y1 = 35,35
 x2,y2 = 45,45
-score1 = 0
-score2 = 0
 
 
 def getBoard():
@@ -38,11 +36,7 @@ def resetBoard(board):
         for y in range(80):
             board[x][y] = 0
     return board
-def write(x,y,size,color,msg):
-    msgSurfaceObj = fontObj.render(msg, False, color)
-    msgRectobj = msgSurfaceObj.get_rect()
-    msgRectobj.topleft = (x,y)
-    screen.blit(msgSurfaceObj,msgRectobj)
+
 def draw_tile(color,x,y):
     pygame.draw.rect(screen,color,((x*8),(y*8),8,8))
 
@@ -125,7 +119,7 @@ class menu():
                 msgRectObj.topleft = (300,280)
                 screen.blit(msgSurfaceObj,msgRectObj)
 
-def play(board,direction1,direction2,alive,alive2,x1,x2,y1,y2,start,score1,score2):
+def play(board,direction1,direction2,alive,alive2,x1,x2,y1,y2,start):
     board = resetBoard(board)
     screen.fill(black)
     draw_tile(blue,35,35)
@@ -175,21 +169,6 @@ def play(board,direction1,direction2,alive,alive2,x1,x2,y1,y2,start,score1,score
 
         if alive == False or alive2 == False:
             retry = ' '
-            if alive == False:
-                score2 += 1
-            else:
-                score1 += 1
-            loop = True
-            while loop == True:
-                for event in pygame.event.get():
-                    if event.type == QUIT:
-                        pygame.quit()
-                        sys.exit()
-                    elif event.type == KEYDOWN:
-                        if event.key == K_RETURN:
-                            loop = False
-                write(220,420,24,white,'Press Enter to Continue')
-                pygame.display.update()
             while retry == ' ':
                 screen.fill(black)
                 if alive == False:
@@ -204,8 +183,6 @@ def play(board,direction1,direction2,alive,alive2,x1,x2,y1,y2,start,score1,score
                     msgRectObj = msgSurfaceObj.get_rect()
                     msgRectObj.topleft = (100,100)
                     screen.blit(msgSurfaceObj,msgRectObj)
-                write(100,50,24,blue,str(score1))
-                write(250,50,24,red,str(score2))
                 msg = 'Retry?'
                 msgSurfaceObj = fontObj.render(msg,False,white)
                 msgRectObj = msgSurfaceObj.get_rect()
@@ -237,7 +214,7 @@ def play(board,direction1,direction2,alive,alive2,x1,x2,y1,y2,start,score1,score
                 direction2 = 'd'
                 x1,y1 = 35,35
                 x2,y2 = 45,45
-                play(board,direction1,direction2,alive,alive2,x1,x2,y1,y2,start,score1,score2)
+                play(board,direction1,direction2,alive,alive2,x1,x2,y1,y2,start)
             else:
                 pygame.quit()
                 sys.exit()
@@ -253,5 +230,5 @@ alive = True
 alive2 = True
 menu = menu()
 start = 'n'
-play(board,direction1,direction2,alive,alive2,x1,x2,y1,y2,start,score1,score2)
+play(board,direction1,direction2,alive,alive2,x1,x2,y1,y2,start)
 
